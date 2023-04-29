@@ -1,0 +1,94 @@
+ <div style="background-image: url(https://www.pixel4k.com/wp-content/uploads/2018/03/Airplane%20Wing3650218716.jpg); background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%">
+    <div class="container"><br><br>
+      <img src="public/img/icone/logo1.png" width="340" alt=""><br><br><br>
+      <div>
+        <a href="/flight" class="btn btn-primary">
+          <img src="public/img/icone/outline_airplane_ticket_white_24dp.png" width="25" alt=""><b> Flight</b></a>
+        <a href="/">
+          <button type="button" class="btn btn-primary">
+            <img src="public/img/icone/outline_tram_white_24dp.png" width="25" alt=""><b> Train</b></button>
+        </a>
+        <a href="/bus">
+          <button type="button" class="btn btn-primary">
+            <img src="public/img/icone/outline_directions_bus_filled_white_24dp.png" width="25" alt=""><b> Bus</b></button>
+        </a>
+      </div>
+      <div>
+        <hr>
+      <form autocomplete="off" action="availableflight" method="get">
+          
+          <div class="row">
+            <div class="col-12 col-md-3 col-xl-3 " style="height: auto;">
+              <div class="autocomplete my-2" style="width: 100%;">
+                <h6><b><samp style="color:red;">*</samp>From: </b><img src="public/img/icone/flight_takeoff_FILL0_wght400_GRAD0_opsz48 (1).png" width="25" alt=""></h6>
+              
+                <input id="fromcity" class="form-control" type="text"  name="from" value="London, London City (LCY)" placeholder="From">
+                  
+              </div>
+            </div>
+            <div class="col-12 col-md-3 col-xl-3" style="height: auto;">
+              <div class="autocomplete  my-2" style="width: 100%;">
+                <h6><img src="public/img/icone/flight_land_FILL0_wght400_GRAD0_opsz48.png" width="25" alt=""><b><samp style="color:red;">*</samp>To:</b></h6>
+                <input id="tocity" class="form-control" type="text"  name="to" value="New York, La Guardia (LGA)" placeholder="To">
+              </div>
+            </div>
+            <div class="col-12 col-md-3 col-xl-2" style="height: auto;margin-top: 4px;">
+              <div class="autocomplete my-2" style="width:100%;">
+                <h6><b><samp style="color:red;">*</samp>Departure:</b></h6>
+                <input style="width: 100%;border:1px solid black;" class="form-control" id="departureDate" name="gdate" type="date" placeholder="Departure">
+              </div>
+            </div>
+            <div class="col-12 col-md-3 col-xl-2" style="height: auto;margin-top: 4px;">
+              <div class="autocomplete my-2" style="width:100%;">
+                <h6><b>Return:</b></h6>
+                <input style="width: 100%;border:1px solid black;" class="form-control" id="returnDate" name="rdate" type="date" placeholder="Return">
+              </div>
+            </div>
+            <div class="col-12 col-md-3 col-xl-2" style="height: auto;margin-top: 4px;">
+              <div class="autocomplete my-2" style="width:100%;">
+                <h6 style="color:rgba(128, 8, 240, 0)">submit</h6>
+                <button class="btn btn-success" type="submit"><b>Check</b></button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <hr>
+        <br>
+      </div>
+    </div>
+  </div>
+{{!-- <div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue"> --}}
+<!--Make sure the form has the autocomplete function switched off:-->
+{{!-- <form autocomplete="off" action="availableflight" method="get">
+  <div class="autocomplete"  >
+    <p style="margin:0%;">go date</p>
+    <input id="fromcity" onkeyup="fromCity()" type="text" name="from" placeholder="form">
+    
+  </div>
+  <div class="autocomplete w3-border w3-round"  >
+   <button type="button"  style="margin:0%;"  class="w3-button w3-light-grey btn" ><span  class="material-icons">
+    cached
+    </span></button>
+    
+  </div>
+  <div class="autocomplete">
+    
+    <p style="margin:0%;">go date</p>
+    <input id="tocity" onkeyup="toCity()" type="text" name="to" placeholder="to">
+    
+  </div>
+  <div class="autocomplete"  >
+    <p style="margin:0%;">go date</p>
+    <input id="fromcity" type="date" name="gdate">
+    
+  </div>
+  <div class="autocomplete"  >
+     <p style="margin:0%;">return data</p>
+    <input id="fromcity" type="date" name="rdate">
+    
+  </div>
+
+  
+
+  <input type="submit" value="Search">
+</form></div> --}}

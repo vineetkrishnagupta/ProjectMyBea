@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+<link rel="stylesheet" href="public/css/style.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link rel="icon" href="public/img/icone/logo.png" type="image/x-icon">
+<link rel="stylesheet" href="public/css/style.css">
+<link rel="stylesheet" href="public/css/scroll.css">
+<link rel="stylesheet" href="public/css/footer.css">
+<title>MyBea Offers</title>
+
+</head>     
+<body >
+  {{#if obj.login }}{{> header login='true' username = obj.userName}}{{else}}{{> header}}{{/if}}
+  {{!-- <div style="background-image: url(https://free4kwallpapers.com/uploads/originals/2015/07/19/website-background.jpg); background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%">
+    <div class="container"><br><br><br>
+      <img src="public/img/icone/logo1.png" width="450" alt=""><br><br><br>
+      
+       
+    </div> --}}
+    
+    {{!-- <h1><img src="https://thumbs.dreamstime.com/b/time-to-travel-wooden-sign-beach-background-49509295.jpg"style="padding: 2px; width: 100%;" alt=""> --}}
+    <img src="https://www.easemytrip.com/images/offer-img/producticons/special_banner_deal1.png"style="width: 100%;" alt=""><br><br>
+ 
+    <div class="container">
+
+       
+        <h3><b>Get Offers</b></h3><hr>
+         <table>
+            <tr>
+                <td>
+                    <h6>
+                        We take pride in providing a wide range of travel offerings to cater to diverse travel preferences. Whether you prefer the convenience of air travel, the scenic route of train travel, or the affordability and flexibility of bus travel, we've got you covered. <br><br>
+                        <b> 1. Flights:</b> We offer both domestic and international flights with competitive prices, flexible booking options, and a wide range of airlines to choose from. <br><br>
+                        <b> 2. Trains:</b> We offer train travel across various routes in India, including luxury trains, express trains, and local trains, allowing you to explore the diverse cultural and geographical landscape of the country. <br><br>
+                        <b> 3. Buses:</b> Our bus services offer affordable and flexible travel options, with a vast network of bus operators and routes to choose from. <br><br>
+                        
+                        We understand that each traveler has unique needs and preferences, which is why we offer a range of travel options to ensure a comfortable and enjoyable travel experience. Our team of travel experts is always available to assist you in planning your trip and providing personalized recommendations based on your preferences. <br>
+In addition to our transport offerings, we also provide a range of other travel services, including accommodations, tours, activities, travel insurance, and more. Our goal is to provide a comprehensive and hassle-free travel experience, ensuring that every aspect of your trip is taken care of so that you can focus on creating unforgettable memories.
+                    </h6>
+
+                </td>
+                <td>
+<img src="https://www.bankit.in/uploads/category/6007stayANDtravelImage.png" alt="">
+                </td>
+            </tr>
+         </table>
+    </div>
+ 
+  <div>
+    <div class="container" style="margin-bottom: 200px;"><hr>
+      <h3><b>Download our App on Android or iPhone and get the best trip deals across India </b></h3><br>
+      
+      <table><tr><th><img src="https://www.investopedia.com/thmb/hJrIBjjMBGfx0oa_bHAgZ9AWyn0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/qr-code-bc94057f452f4806af70fd34540f72ad.png" width="160" alt=""></th><th><h6><img src="https://thumbs.dreamstime.com/b/basic-rgb-179717724.jpg" width="200" alt=""></h6></th><th>Rating <br>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-half"></i></i><br>4.4 <br><br>
+      Rating <br>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-half"></i></i>
+      <i class="bi bi-star"></i><br>3.4
+      </th></tr></table>
+      
+    </div>
+  </div>
+  <hr>
+    {{>footer}}
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

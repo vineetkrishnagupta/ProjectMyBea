@@ -1,0 +1,85 @@
+<!-- How to send Email in php  -->
+<!-- Make by Vineet Krishna Gupta -->
+<!-- ****** ending main php code ****** -->
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- ****** style for otp input ******  -->
+    <style>
+        input {
+            margin: 10px;
+            height: 40px;
+            width: 5%;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+            font-family: arimo;
+            font-size: 1.2rem;
+            background: #eef2f3;
+
+        }
+    </style>
+
+    <title>enter OTP!</title>
+
+</head>
+
+<body>
+    <div style="width: auto;">
+        <form    action="/action_otp" method="POST" autocomplete="off">
+            <div class="mb-3">
+
+                <label for="ist" class="form-label">Enter OTP</label> <br>
+                <div lass="content">
+                    <input type="text" name="ist" id='ist' maxlength="1" onkeyup=" clickEvent(this,'sec')" autofocus>
+                    <input type="text" name="sec" id="sec" maxlength="1" onkeyup=" clickEvent(this,'third')">  
+                    <input type="text" name="third" id="third" maxlength="1" onkeyup=" clickEvent(this,'fourth')">
+                    <input type="text" name="fourth" id="fourth" maxlength="1" onkeyup=" clickEvent(this,'fifth')">
+                    <input type="text" name="fifth" id="fifth" maxlength="1" onkeyup=" clickEvent(this,'six')">
+                    <input type="text" name="six" id="six" maxlength="1">
+                </div>
+            </div>
+            <button type="submit" id='submit' class="btn btn-outline-success"
+                onclick="onSubmit()"><b>Submit</b></button>
+            <button type="button" id='otpResend' class="btn btn-outline-danger" data-bs-toggle="modal"
+                onclick="resendOTP()">
+                <b>Resend otp</b>
+            </button>
+        </form>
+        <h6 id="otpH6"></h6>
+    </div>
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+<!-- ****** main js code of this page ****** -->
+<script>
+
+    function clickEvent(first, last) {
+        if (first.value.length) {
+            document.getElementById(last).focus();
+        }
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,62 @@
+
+ <div style="background-image: url(https://coolwallpapers.me/picsup/5749741-bus-wallpapers.jpg); background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%">
+    <div class="container"><br><br>
+      <img src="public/img/icone/logo1.png" width="340" alt=""><br><br><br>
+      <div>
+        <a href="/flight" class="btn btn-primary">
+          <img src="public/img/icone/outline_airplane_ticket_white_24dp.png" width="25" alt=""><b> Flight</b></a>
+        <a href="/">
+          <button type="button" class="btn btn-primary">
+            <img src="public/img/icone/outline_tram_white_24dp.png" width="25" alt=""><b> Train</b></button>
+        </a>
+          <a href="/bus">
+          <button type="button" class="btn btn-primary">
+            <img src="public/img/icone/outline_directions_bus_filled_white_24dp.png" width="25" alt=""><b> Bus</b></button>
+        </a>
+         
+         
+      </div>
+      <div>
+        <hr>
+      <form autocomplete="off" action="availablebus" method="get">
+          
+          <div class="row">
+            <div class="col-12 col-md-3 col-xl-3 " style="height: auto;">
+              <div class="autocomplete my-2" style="width: 100%;">
+                <h6><b><samp style="color:red;">*</samp>From: </b><i class="bi bi-arrow-right-square-fill"></i></h6>
+             
+                <input id="fromcity" onkeyup="fromCity()" class="form-control" type="text"  name="from" value="Banda" placeholder="From">
+                  
+              </div>
+            </div>
+            <div class="col-12 col-md-3 col-xl-3" style="height: auto;">
+              <div class="autocomplete  my-2" style="width: 100%;">
+                <h6><i class="bi bi-arrow-right-square-fill"></i><b><samp style="color:red;"> *</samp>To:</b></h6>
+                <input id="tocity" class="form-control" onkeyup="toCity()" type="text"  name="to" value="Kanpur" placeholder="To">
+              </div>
+            </div>
+            <div class="col-12 col-md-3 col-xl-2" style="height: auto;">
+              <div class="autocomplete my-2" style="width:100%;">
+                <h6><b><samp style="color:red;">*</samp>Departure:</b></h6>
+                <input style="width: 100%;border:1px solid black;" class="form-control" id="departureDate" name="departureDate" type="date" placeholder="">
+              </div>
+            </div>
+            <div class="col-12 col-md-3 col-xl-2" style="height: auto;">
+              <div class="autocomplete my-2" style="width:100%;">
+                <h6><b>Return:</b></h6>
+                <input style="width: 100%;border:1px solid black;" class="form-control" id="returnDate" name="returnDate" type="date" placeholder="Return Date">
+              </div>
+            </div>
+            <div class="col-12 col-md-3 col-xl-2" style="height: auto;margin-top: 3px;">
+              <div class="autocomplete my-1" style="width:100%;">
+                <h6 style="color:rgba(128, 8, 240, 0)">submit</h6>
+                <button class="btn btn-success" type="submit"><b>Check</b></button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <hr>
+        <br>
+      </div>
+    </div>
+  </div>

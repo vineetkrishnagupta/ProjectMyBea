@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ 
+{{!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> --}}
+ 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="public/css/style.css">
+<link rel="stylesheet" href="public/css/scroll.css">
+<link rel="stylesheet" href="public/css/footer.css">
+<link rel="icon" href="public/img/icone/logo.png" type="image/x-icon">
+<title>MyBea Buses</title>
+</head>     
+<body style="background-image: url(https://i.pinimg.com/736x/f1/5e/0f/f15e0fdc3c87c48847f76b02adb9c9a4.jpg); background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%">
+  {{#if login }}{{> header login='true' username = userName}}{{else}}{{> header}}{{/if}}
+ 
+ 
+     {{>bus_schedule_form}}
+     <div class="my-3">
+         <div class="container">
+          <h5 class="text-dark">
+               <b>There are some Available <i class="bi bi-bus-front-fill"></i> Buses
+               <u>
+               <a style="color: #000;" target="_blank" href="https://www.google.com/search?q={{from_city}}&rlz= ">{{from_city}}</a>
+               </u>&nbsp;to&nbsp;<u><a style="color: #000;" target="_blank" href="https://www.google.com/search?q={{to_city}}&rlz= ">{{to_city}}</a></u></b>
+            </h5>
+            <h6>Looking for convenient and comfortable travel options from {{from_city}} to {{to_city}}? We've got you covered with a variety of buses at your disposal.</h6>
+            <hr>
+            <div class="card">
+               <div class="card-body">
+                <table class="table table-hover">
+                     <thead>
+                        <tr>
+                           <th scope="col"><i class="bi bi-card-heading"></i> Bus Number</th>
+                           <th scope="col"><i class="bi bi-bus-front-fill"></i> Company Name</th>
+                           <th scope="col"><i class="bi bi-pin-map"></i> Departure Address</th>
+                           <th scope="col"><i class="bi bi-calendar"></i> Departure Time</th>
+                           <th scope="col"><i class="bi bi-hourglass-split"></i> Duration</th>
+                           <th scope="col"><i class="bi bi-cash-coin"></i> Price</th>
+                           <th scope="col"><i class="bi bi-asterisk"></i> Bas Capacity</th>
+                           <th scope="col">Operation</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                       
+                          {{#each obj}}
+                            <tr>
+                               <form action="/bookbus" method="post">
+                               <th scope="row"><input type="text" name="bus_number" style="display:none;" value="{{bus_number}}">{{bus_number}}</th>
+                               <td><input type="text" name="company_name" style="display:none;" value="{{company_name}}">{{company_name}}
+                              </td>
+                               <td><input type="text" name="departure_address" style="display:none;" value="{{departure_address}}">{{departure_address}} </td>
+                              <td><input type="text" name="departure_time" style="display:none;" value="{{departure_time}}">{{departure_time}} </td>
+                              <td> 
+                                 <input type="text" name="duration" style="display:none;" value="{{duration}}"><i class="bi bi-clock"></i> {{duration}} 
+                              </td>
+                               
+                              <td><input type="text" name="price" style="display:none;" value="{{price}}"><i class="bi bi-currency-rupee"></i>{{price}}/-</td>
+                               <td> 
+                                 <input type="text" name="bas_capacity" style="display:none;" value="{{bas_capacity}}"> {{bas_capacity}} Seats 
+                              </td>
+                               
+                              <td><button type="submit" class="btn btn-success">Book</button></td>
+                               </form>
+                            </tr>
+                     
+                      {{/each}}
+                      </tbody>
+                </table>
+                {{#if notAvilible}}
+                           <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>Please provide the correct city's information.</strong>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div> 
+                                <table>
+                                 <tr>
+                                    <th>
+                                    <img src="https://img.freepik.com/premium-vector/questioned-thinking-confused-with-question-mark-looking-up-with-thoughtful-focused-expression-concept-illustration_270158-241.jpg" alt="" width="220">
+
+                                    </th>
+                                    <th>
+                                    <h2><b> Sorry, no buses are available. </b></h2>
+
+                                    </th>
+                                 </tr>
+                                </table>
+                        {{/if}}
+            </div></div>
+        </div>
+    </div>
+    
+ <br>
+  <div>
+    <div class="container" style="margin-bottom: 200px;"><hr>
+      <h3><b>Download our App on Android or iPhone and get the best bus booking deals across India </b></h3><br>
+      
+      <table><tr><th><img src="https://www.investopedia.com/thmb/hJrIBjjMBGfx0oa_bHAgZ9AWyn0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/qr-code-bc94057f452f4806af70fd34540f72ad.png" width="160" alt=""></th><th><h6><img src="https://thumbs.dreamstime.com/b/basic-rgb-179717724.jpg" width="200" alt=""></h6></th><th>Rating <br>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-half"></i></i><br>4.4 <br><br>
+      Rating <br>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-half"></i></i>
+      <i class="bi bi-star"></i><br>3.4
+      </th></tr></table>
+      
+    </div>
+  </div>
+<hr>
+ {{>footer}}
+  {{#if bpay }}
+  
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                  
+               
+                 <div class="modal-body">
+                 
+               
+         
+                    
+                     
+                 <form action="/bpayment" method="post">
+          
+                     <div class="mb-3">
+
+                    
+                     <h4> <img src="https://toppng.com//public/uploads/preview/payment-icon-payment-method-icon-115534531553jugxnc3ex.png" height="50" alt="not found"> <b> &ensp; Payment</b></h4>
+                     
+                         <hr>
+                         <label for="cardNumber" class="form-label"><b>Card Number</b></label>
+                         <input type="text"  style="background-color: white;border-color: gray;" class="form-control" id="cardNumber" aria-describedby="emailHelp" name="cardNumber" placeholder="XXXX XXXX XXXX" maxlength="12" required> 
+                         <table class="my-2">
+                           <tr>
+                              <td style="width: 30%;">
+                              <label for="cardMonth" class="form-label"><b>Expiration Date</b></label>
+                              <input type="number" style="background-color: white;border-color: gray;" class="form-control" id="cardMonth" aria-describedby="emailHelp" name="cardMonth" placeholder="Month" min="01" max="12" required> 
+                              </td>
+                              <td style="width: 30%;">
+                              <label for="cardYear" class="form-label" style="color:white"><b>None</b></label>
+                              <input type="number" style="background-color: white;border-color: gray;" class="form-control" id="cardYear" aria-describedby="emailHelp" name="cardYear" placeholder="Year" min="1990" max="2050" required> 
+                              </td>
+                              <td style="width: 40%;">
+                              <label for="cvv" class="form-label"><b>CVV/CVC</b></label>
+                              <input type="password" style="background-color: white;border-color: gray;" class="form-control" id="cvv" aria-describedby="emailHelp" name="cvv" value="" placeholder="" maxlength="4" required> 
+                              </td>
+                               
+                           </tr>
+                         </table>
+
+                         <label for="cardHolder" class="form-label"><b>Card Holder Name</b></label>
+                         <input type="text"  style="background-color: white;border-color: gray;" class="form-control" id="cardNumber" aria-describedby="emailHelp" name="cardHolder" placeholder="Enter card Holder Name"  required>
+
+                         <div>
+
+                         </div>
+                          
+                         
+                         
+                          
+         
+                     </div><hr>
+                     <table>
+                        <tr style="width: 100%;">
+                           <td style="width: 50%;"><h6><b>Total: ₹ </b> {{price}}/- </h6></td>
+                           <td style="text-align:right;"><img style="width:60%;" src="https://www.citypng.com/public/uploads/small/216354159589qrojah4tydfjafob18hv9vsf5yvslekdx8swjkp3h29sozabupobysff2fuohctuvykt4isotjcbcastfbh07pcvp8poykymdj9.png" alt=""></td>
+                        </tr>
+                     </table>
+                     
+         
+         
+                     <button type="submit" class="btn btn-outline-success"><b><i class="bi bi-credit-card-fill"></i> Pay</b></button>
+
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" ><b>Close</b></button>
+         
+                 </form><hr>
+                 </div>
+         
+               
+                  
+             </div>
+         </div>
+         </div>
+
+
+  
+  {{/if}}
+ 
+    <script src="public/js/bus_city_auto_suggestion.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ {{#if bpay }}
+ <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+         
+         
+         
+          <script>
+              $(document).ready(function(){
+                  $("#staticBackdrop").modal("show");
+              })
+          </script>
+  {{/if}}
+</body>
+</html>

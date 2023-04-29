@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="icon" href="public/img/icone/logo.png" type="image/x-icon">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="public/css/scroll.css">
+<link rel="stylesheet" href="public/css/footer.css">
+<link rel="icon" href="public/img/icone/logo.png" type="image/x-icon">
+   </head>
+   <body style="background-image: url(https://wallpaper.dog/large/10878270.jpg);background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%">
+      <br><br><br><br>
+      <div class="container" style="margin: auto; width: fit-content;">
+         <center>
+            <img style="align-items: center;" src=" " width="90" alt="">
+         </center>
+      </div>
+      <div class="container" style="margin: auto; width: fit-content; ">
+         <h3 style="align-items: center; margin-right:200px;"><b>Good to see you again</b></h3>
+         <div class="card" >
+            <div class="card-body">
+               <h5 class="modal-title" id="staticBackdropLabel">{{#if unauthorized_user }}<img src="https://library.kissclipart.com/20180902/abe/kissclipart-human-error-icon-png-clipart-computer-icons-error-c18d7a413a983be1.png" height="50" alt="not found">Invalid User   {{else}}   <img src="https://cdn1.iconfinder.com/data/icons/users-vol-3/32/user-man-enter-login-signup-512.png" height="50" alt="not found">Login {{/if}}</h5>
+               <hr>
+               {{#if unauthorized_user }}    
+               <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <strong>Please chick your email address and password. </strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+               {{/if}}
+               <form action="action_login" name="login" autocomplete="off" method="POST">
+                  <input type="hidden" name="_token" value="0ilLOGuUybgPAzoVMs0MnR9XlIS6JZLisFmuLbOQ">
+                  <div class="mb-3">
+                     <label for="email" class="form-label"><i class="bi bi-envelope-at-fill" style="font-size:18px;"></i> Email</label>
+                     <input type="email"{{#if unauthorized_user}}class="form-control is-invalid"  {{else}} class="form-control" {{/if}}id="email" aria-describedby="emailHelp" name="email" value="gaurikasharma209@gmail.com"required> 
+                     <label for="password" class="form-label"><i class='bi bi-key-fill' style='font-size:20px'></i> Password</label>
+                     <input type="password" {{#if unauthorized_user}}class="form-control is-invalid"  {{else}} class="form-control" {{/if}} id="loginPasswordok" name = "password" value="gaurika@123" required>
+                     <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input success" id="exampleCheck" onclick="Show()">
+                                        <label class="form-check-label" for="exampleCheck">Show Password</label>
+                                    </div>
+                     <a href="forgetPassword.php" class="text-success">
+                        <div id="emailHelp" class="form-text text-success">Forget password.</div>
+                     </a>
+                  </div>
+                  <button type="submit" class="btn btn-outline-success"><b>Submit</b></button>
+                  <a href="/signup" class="btn btn-outline-primary"><b>Sign in</b></a>
+               </form>
+               <hr>
+               <a href="/" style="width:100%;">
+               <button type="button" style="width:100%;" class="btn btn-secondary btn-lg" ><b>Back</b></button>
+               </a>
+            </div>
+         </div>
+      </div>
+      {{!-- <form class="w3-container w3-card-4" action="/action_login" method="POST">
+         <h2 class="w3-text-blue">Input Form</h2>
+         <p>Use any of the w3-text-color classes to color your labels.</p>
+         <p>      
+            <label class="w3-text-blue"><b>Email</b></label>
+            <input class="w3-input w3-border" value="test@gmail.com" name="email" type="email">
+         </p>
+         <p>      
+            <label class="w3-text-blue"><b>Password</b></label>
+            <input class="w3-input w3-border" value="test@123" name="password" type="text">
+         </p>
+         <p>      
+            <button class="w3-btn w3-blue">Login</button>
+         </p>
+      </form> --}}
+      <script>
+          function Show(){
+                var mp = document.getElementById("loginPasswordok");
+                if (mp.type === "password") {
+                mp.type = "text";
+                } 
+                else {
+                mp.type = "password";
+                }
+            }
+      </script>
+   </body>
+</html>

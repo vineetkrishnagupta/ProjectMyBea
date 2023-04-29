@@ -1,0 +1,236 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Available Train</title>
+    {{!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> --}}
+ 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="public/css/style.css">
+<link rel="stylesheet" href="public/css/scroll.css">
+<link rel="stylesheet" href="public/css/footer.css">
+<link rel="icon" href="public/img/icone/logo.png" type="image/x-icon">
+  </head>
+
+  <body style="background-image: url(https://getwallpapers.com/wallpaper/full/0/2/5/1444409-free-white-background-wallpaper-images-1920x1080.jpg);background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%">
+  
+ {{#if login }}{{> header login='true' username = userName}}{{else}}{{> header}}{{/if}}
+    {{>train_schedule_form}}
+
+    <div class="my-3">
+         <div class="container"><hr>
+          <h5 class="text-dark">
+               <b>There are some Available Trains
+               <u>
+               <a style="color: #000;" target="_blank" href="https://www.google.com/search?q={{from_city}}&rlz= ">{{from_city}}</a>
+               </u>&nbsp;to&nbsp;<u><a style="color: #000;" target="_blank" href="https://www.google.com/search?q={{to_city}}&rlz= ">{{to_city}}</a></u></b>
+            </h5>
+            <hr>
+            <div class="card">
+               <div class="card-body">
+                <table class="table table-hover">
+                  <thead>
+                        <tr>
+                           <th scope="col"><i class="bi bi-card-heading"></i> Train Number</th>
+                           <th scope="col"><i class="bi bi-train-front"></i> Train name</th>
+                           <th scope="col"><i class="bi bi-pin-map"></i> Origin to Destination </th>
+                            
+                           <th scope="col"><i class="bi bi-alarm-fill"></i> Departure</th>
+                           <th scope="col">
+                           <i class="bi bi-hourglass-split"></i> Duration</th>
+                           <th scope="col"><i class="bi bi-cloud-sun-fill"></i> ran days</th>
+                           <th scope="col"><i class="bi bi-cash-coin"></i> Class</th>
+                           <th scope="col">Operation</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                       {{#each obj.data}}
+                       <tr>
+                        <form action="/train/book" method="post">
+                        <td><input type="text" name="train_number" style="display:none;" value="{{train_number}}">{{train_number}}</td>
+                        <td><input type="text" name="train_name" style="display:none;" value="{{train_name}}">{{train_name}}</td>
+                        <td>{{train_origin_station}}({{train_src}})<i class="bi bi-arrow-left-right"></i> {{train_destination_station}}({{train_src}})</td>
+                        <td><input type="text" name="depart_time" style="display:none;" value="{{from_std}}">{{from_std }} </td>
+                        <td><input type="text" name="distance" style="display:none;" value="{{local_train_from_sta}}">{{duration}}</td> 
+                        <td><select class="form-select" aria-label="Default select example">{{#each run_days}}<option selected>{{this}}</option>{{/each}}</select></td>
+                        <td><select class="form-select" aria-label="Default select example">{{#each class_type}}<option selected>{{this}}</option>{{/each}}</select></td>
+                        <td><button type="submit" class="btn btn-success">Book</button></td>
+                        </form>
+                       </tr>
+
+                       {{/each}}
+                     </tbody>
+                </table>
+                </div>
+            </div>
+
+          </div>
+    </div>
+    {{!-- {{#each obj.data}}
+    <div class="w3-container w3-margin">
+        <form action="/booktrain" method="post">
+      
+       <label for="train_name"><b>train name</b></label>
+      <input type="text" style="width: 50%; background-color:rgb(255, 255, 255);" readonly name="train_name" id="train_name" value="{{train_name}}"><br>
+
+       
+
+      <label for="train_number"><b>train number</b></label>
+      <input type="text" style="width: 50%; background-color:rgb(255, 255, 255);" readonly name="train_number"  id="train_number" value="{{train_number}}"><br>
+
+      <label for="train_origin_station"><b>origin station</b></label>
+      <input type="text" style="width: 50%; background-color:rgb(255, 255, 255);" readonly name="train_origin_station"  id="train_origin_station" value="{{train_origin_station}} ({{train_origin_station_code}})"><br>
+
+      <label for="train_destination_station"><b>origin station</b></label>
+      <input type="text" style="width: 50%; background-color:rgb(255, 255, 255);" readonly name="train_destination_station"  id="train_destination_station" value="{{train_destination_station}} ({{train_destination_station_code}})"><br>
+
+       {{#each run_days}}
+
+              {{this}}
+            {{/each}}
+
+      <br>
+
+      <button >book</button>
+      </form>
+    </div><hr>
+    
+       
+
+    {{/each}} --}}
+ 
+  
+  <div>
+    <div class="container" style="margin-bottom: 200px;"><hr> 
+      <h4><b>Download our App on Android or iPhone and get the best indian railway booking deals across India </b></h4><br>
+      <ul>
+        <li>
+Get ticket confirmation chances before booking.
+        </li>
+        <li>
+Check real-time seat availability for all IRCTC trains.
+        </li>
+      </ul>
+      <table><tr><th><img src="https://www.investopedia.com/thmb/hJrIBjjMBGfx0oa_bHAgZ9AWyn0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/qr-code-bc94057f452f4806af70fd34540f72ad.png" width="160" alt=""></th><th><h6><img src="https://thumbs.dreamstime.com/b/basic-rgb-179717724.jpg" width="200" alt=""></h6></th><th>Rating <br>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-half"></i></i><br>4.4 <br><br>
+      Rating <br>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-half"></i></i>
+      <i class="bi bi-star"></i><br>3.4
+      </th></tr>
+       
+      </table>
+      <h6 class="mx-2"><img src="public/img/ui/irctcStamp.png" width="200" alt=""></h6>
+    </div>
+  </div>
+  <hr>
+
+    {{>footer}}
+    {{#if bpay }}
+  
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                  
+               
+                 <div class="modal-body">
+          
+                     
+                 <form action="/trainticket" method="post">
+          
+                     <div class="mb-3">
+
+                    
+                     <h4> <img src="https://toppng.com//public/uploads/preview/payment-icon-payment-method-icon-115534531553jugxnc3ex.png" height="50" alt="not found"> <b> &ensp; Payment</b></h4>
+                     
+                          
+                         <hr>
+                         <label for="cardNumber" class="form-label"><b>Card Number</b></label>
+                         <input type="text"  style="background-color: white;border-color: gray;" class="form-control" id="cardNumber" aria-describedby="emailHelp" name="cardNumber" placeholder="XXXX XXXX XXXX" maxlength="12" required> 
+
+                          
+                         <table class="my-2">
+                           <tr>
+                              <td style="width: 30%;">
+                              <label for="cardMonth" class="form-label"><b>Expiration Date</b></label>
+                              <input type="number" style="background-color: white;border-color: gray;" class="form-control" id="cardMonth" aria-describedby="emailHelp" name="cardMonth" placeholder="Month" min="01" max="12" required> 
+                            
+                              </td>
+                              <td style="width: 30%;">
+                              <label for="cardYear" class="form-label" style="color:white"><b>None</b></label>
+                              <input type="number" style="background-color: white;border-color: gray;" class="form-control" id="cardYear" aria-describedby="emailHelp" name="cardYear" placeholder="Year" min="1990" max="2050" required> 
+                                 
+                              </td>
+                              
+                              <td style="width: 40%;">
+                              <label for="cvv" class="form-label"><b>CVV/CVC</b></label>
+                              <input type="password" style="background-color: white;border-color: gray;" class="form-control" id="cvv" aria-describedby="emailHelp" name="cvv" value="" placeholder="" maxlength="4" required> 
+                                 
+                              </td>
+                               
+                           </tr>
+                         </table>
+
+                         <label for="cardHolder" class="form-label"><b>Card Holder Name</b></label>
+                         <input type="text"  style="background-color: white;border-color: gray;" class="form-control" id="cardHolder" aria-describedby="emailHelp" name="cardHolder" placeholder="Enter card Holder Name" required>
+
+                         <div>
+
+                         </div>
+                          
+                         
+                         
+                          
+         
+                     </div><hr>
+                     <table>
+                        <tr style="width: 100%;">
+                           <td style="width: 50%;"><h6><b>Total: ₹ </b> {{price}}/- </h6></td>
+                           <td style="text-align:right;"><img style="width:60%;" src="https://www.citypng.com/public/uploads/small/216354159589qrojah4tydfjafob18hv9vsf5yvslekdx8swjkp3h29sozabupobysff2fuohctuvykt4isotjcbcastfbh07pcvp8poykymdj9.png" alt=""></td>
+                        </tr>
+                     </table>
+                     
+         
+         
+                     <button type="submit" class="btn btn-outline-success"><b><i class="bi bi-credit-card-fill"></i> Pay</b></button>
+
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" ><b>Close</b></button>
+         
+                 </form><hr>
+                 </div>
+         
+               
+                  
+             </div>
+         </div>
+         </div>
+
+
+  
+  {{/if}}
+    
+   
+<script src="public/js/railway_station_auto_suggestion.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ {{#if bpay }}
+ <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+         
+         
+         
+          <script>
+              $(document).ready(function(){
+                  $("#staticBackdrop").modal("show");
+              })
+          </script>
+  {{/if}}
+ </body>
+</html>

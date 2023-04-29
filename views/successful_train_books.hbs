@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+<link rel="stylesheet" href="public/css/style.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="public/css/style.css">
+<link rel="stylesheet" href="public/css/scroll.css">
+<link rel="stylesheet" href="public/css/footer.css">
+<link rel="icon" href="public/img/icone/logo.png" type="image/x-icon">
+<title>Successful Payment</title>
+</head>     
+<body style="background-image: url(https://i.pinimg.com/736x/f1/5e/0f/f15e0fdc3c87c48847f76b02adb9c9a4.jpg); background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%"></body>
+<div id="page_header">
+  {{#if obj.login }}{{> header login='true' username = obj.userName}}{{else}}{{> header}}{{/if}}
+ 
+ 
+     {{>train_schedule_form}}
+     <hr>
+     </div>
+     <div class="container" id="Congratulations">
+        <div class="alert alert-success" role="alert">
+  <h3 class="alert-heading"><b><i class="bi bi-check-circle-fill"></i> Congratulations !</b></h3><hr>
+  <p><b>Dear {{obj.userName}}</b>, Your payment has been successfully processed and your ticket to travel from <b> {{obj.from_city}}</b> <i class="bi bi-arrow-left-right"></i> <b> {{obj.to_city}}</b> has been booked. We appreciate your trust in our services and we're delighted to be a part of your travel journey. You can now look forward to an amazing travel experience and create unforgettable memories. </p>
+  <p>You'll receive an <i class="bi bi-envelope-check-fill"></i> <b>{{obj.userEmail}}</b> shortly with all the details of your booking any additional information you might need.</p>
+  <hr>
+  <p class="mb-0"><b>Thank you <i class="bi bi-hand-thumbs-up-fill"></i> for choosing us, and we wish you a safe and pleasant trip.</b></p>
+</div><hr>
+     </div>
+<div class="container">
+      <div class="card" style="width: 100%; padding: 10px;">
+    <div class="row">
+      
+
+       
+            <div class="col-12 col-md-4 col-xl-4 ">
+                <div id="ticket_icone">
+ <img src="https://thumbs.dreamstime.com/b/illustration-woman-reading-book-train-187211889.jpg" style="width: 100%;" alt="">
+                </div>
+               
+
+            </div>
+            <div class="col-12 col-md-8 col-xl-8 ">
+                <table style="width:100%; ">
+                    <tr style="border-bottom: 2px solid red;">
+                        <th>
+                            <h4><b><i class="bi bi-train-front-fill"></i> Train Tickets</b></h4>
+                            <h6>{{obj.train_name}}</h6>
+                        </th>
+
+                    </tr>
+
+                </table><br>
+                <table style="width:100%;">
+                    
+                    <tr>
+                        <td>
+                            <h6><b><i class="bi bi-arrow-right-square-fill"></i> From : </b> {{obj.from_city}}</h6>
+                        </td>
+                        <td>
+                            <h6><b><i class="bi bi-card-heading"></i> Train No :</b> {{obj.train_number}}</h6>
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            <h6><b>To <i class="bi bi-arrow-left-square-fill"></i> : </b> {{obj.to_city}}</h6>
+                        </td>
+                        <td>
+                            <h6><b><i class="bi bi-calendar"></i> Date :</b> {{obj.gdate}}</h6>
+                        </td>
+                        
+                    </tr>
+                      <tr>
+                         <td>
+                            <h6><b><i class="bi bi-clock-fill"></i> Time :</b> {{obj.depart_time}}</h6>
+                        </td>
+                        <td>
+                            <h6><b><i class="bi bi-flag-fill"></i> Distance :</b> {{obj.distance}}</h6>
+                        </td>
+                       
+                    </tr>
+                    <tr style="border-bottom: 2px solid red;">
+                         <td>
+                            <h6><b><i class="bi bi-cash-coin"></i> Price :</b> <i class="bi bi-currency-rupee"></i> 293/-</h6>
+                        </td>
+                         <td>
+                            <h6 class="text-success"><b>Payment : Successful</b></h6>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="https://qrcg-free-editor.qr-code-generator.com/main/assets/images/websiteQRCode_noFrame.png" width="80" alt="">
+                        </td>
+                        <td>
+                            <img src="https://static.vecteezy.com/system/resources/previews/017/059/171/original/barcode-sign-free-png.png" width="270" alt="">
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                </table>
+                <h6><i class="bi bi-person-check"></i> {{obj.userName}}</h6><hr>
+                <div id="print_tickets_button">
+                      <button class="btn btn-primary" onclick="page_print()">Print Tickets</button>
+                <button class="btn btn-dark">Back</button>
+
+                </div>
+              
+                 
+
+            </div>
+        </div>
+        </div>
+     </div>
+</div>
+     <div id="page_footer">
+
+   
+     
+  <div>
+    <div class="container" style="margin-bottom: 200px;"><hr><br>
+      <h4><b>Download our App on Android or iPhone and get the best indian railway booking deals across India </b></h4><br>
+      <ul>
+        <li>
+Get ticket confirmation chances before booking.
+        </li>
+        <li>
+Check real-time seat availability for all IRCTC trains.
+        </li>
+      </ul>
+      <table><tr><th><img src="https://www.investopedia.com/thmb/hJrIBjjMBGfx0oa_bHAgZ9AWyn0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/qr-code-bc94057f452f4806af70fd34540f72ad.png" width="160" alt=""></th><th><h6><img src="https://thumbs.dreamstime.com/b/basic-rgb-179717724.jpg" width="200" alt=""></h6></th><th>Rating <br>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-half"></i></i><br>4.4 <br><br>
+      Rating <br>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-half"></i></i>
+      <i class="bi bi-star"></i><br>3.4
+      </th></tr>
+       
+      </table>
+      <h6 class="mx-2"><img src="public/img/ui/irctcStamp.png" width="200" alt=""></h6>
+    </div>
+  </div>
+  <hr>
+    {{>footer}}
+    </div>
+      </div>
+    <script src="public/js/train_city_auto_suggestion.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ <script>
+    function page_print(){
+        document.getElementById("page_header").style.display = "none";
+        document.getElementById("Congratulations").style.display = "none";
+        document.getElementById("ticket_icone").style.display = "none";
+        document.getElementById("print_tickets_button").style.display = "none";
+        document.getElementById("page_footer").style.display = "none";
+
+        window.print();
+
+        document.getElementById("page_header").style.display = "";
+        document.getElementById("Congratulations").style.display = "";
+        document.getElementById("ticket_icone").style.display = "";
+        document.getElementById("print_tickets_button").style.display = "";
+        document.getElementById("page_footer").style.display = "";
+    }
+    
+ </script>
+</body>
+</html>

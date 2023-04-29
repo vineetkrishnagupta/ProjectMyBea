@@ -1,0 +1,126 @@
+<!-- How to send Email in php  -->
+<!-- Make by Vineet Krishna Gupta -->
+<!-- ****** ending main php code ****** -->
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="icon" href="public/img/icone/logo.png" type="image/x-icon">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="public/css/scroll.css">
+<link rel="stylesheet" href="public/css/footer.css">
+   
+
+    <!-- ****** style for otp input ******  -->
+    <style>
+        input {
+            margin: 10px;
+            height: 40px;
+            width: 7%;
+             {{#if worng_otp}}  border: 3px solid red; {{else}}  border: 1px solid black; {{/if}} 
+           
+            border-radius: 5px;
+            text-align: center;
+            font-family: arimo;
+            font-size: 1.2rem;
+            background: #eef2f3;
+
+        }
+    </style>
+
+    <title>enter OTP!</title>
+
+</head>
+
+<body style="background-image: url(https://wallpaper.dog/large/10878270.jpg);background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%"><br><br><br>
+   
+    {{!-- <div style="align-items:center;">
+         
+        <h2 class="w3-text-blue">Enter OTP</h2>
+       
+        <form  class="w3-container w3-card-4" style="height:auto; width: 40%;" action="/action_otp" method="POST" autocomplete="off">
+            <div class="mb-3">
+                <div class="w3-container"><br> --}}
+                    {{!-- <input  type="text" name="ist" id='ist' maxlength="1" onkeyup=" clickEvent(this,'sec')" autofocus>
+                    <input type="text" name="sec" id="sec" maxlength="1" onkeyup=" clickEvent(this,'third')">  
+                    <input type="text" name="third" id="third" maxlength="1" onkeyup=" clickEvent(this,'fourth')">
+                    <input type="text" name="fourth" id="fourth" maxlength="1" onkeyup=" clickEvent(this,'fifth')">
+                    <input type="text" name="fifth" id="fifth" maxlength="1" onkeyup=" clickEvent(this,'six')">
+                    <input type="text" name="six" id="six" maxlength="1"> --}}
+                {{!-- </div>
+            </div><br>
+            <button type="submit" id='submit' class="w3-btn w3-blue"
+                 ><b>Submit</b></button>
+            
+            <a class="w3-btn w3-red" href="/signup"><b>Resend otp</b></a>
+            <hr>
+        </form>
+        
+        <h6 id="otpH6"></h6>
+    </div> --}}
+      <div class="container" style="margin: auto; width: 40%; ">
+    <div class="card" >
+            <div class="card-body"> 
+               <h5 class="modal-title" id="staticBackdropLabel">   <img src="https://static.thenounproject.com/png/3180049-200.png" height="50" alt="not found">{{#if email}} {{email}} {{/if}} </h5>
+               <hr>
+                 {{#if worng_otp }}    
+               <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <strong>Wrong OTP! Please crack Resend Button to Resend OTP. button </strong> 
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div><hr>
+               {{/if}}
+               <form  class="w3-container w3-card-4"   action="/action_otp" method="POST" autocomplete="off">
+            <div class="mb-3">
+                <div class="w3-container"><br>
+                    <input  type="text" name="ist" id='ist' maxlength="1" onkeyup=" clickEvent(this,'sec')" autofocus>
+                    <input type="text" name="sec" id="sec" maxlength="1" onkeyup=" clickEvent(this,'third')">  
+                    <input type="text" name="third" id="third" maxlength="1" onkeyup=" clickEvent(this,'fourth')">
+                    <input type="text" name="fourth" id="fourth" maxlength="1" onkeyup=" clickEvent(this,'fifth')">
+                    <input type="text" name="fifth" id="fifth" maxlength="1" onkeyup=" clickEvent(this,'six')">
+                    <input type="text" name="six" id="six" maxlength="1">
+                </div>
+            </div><br>
+           
+                 {{#if worng_otp}} <button id='submit' class="btn btn-outline-success" disabled
+                 ><b>Submit</b></button> <a class="btn btn-danger btn-lg" href="/signup"><b>Resend otp</b></a> {{else}} <button type="submit" id='submit' class="btn btn-outline-success"
+                 ><b>Submit</b></button>  <a class="btn btn-outline-danger" href="/signup"><b>Resend otp</b></a>  {{/if}} 
+            
+            
+            
+        </form>
+               <hr>
+               <a href="/" style="width:100%;">
+               <button type="button" style="width:100%;" class="btn btn-secondary btn-lg" ><b>Back</b></button>
+               </a>
+            </div>
+         </div>
+      </div>
+      
+</body>
+
+ 
+
+
+
+
+
+
+<!-- ****** main js code of this page ****** -->
+<script>
+
+    function clickEvent(first, last) {
+        if (first.value.length) {
+            document.getElementById(last).focus();
+        }
+    }
+
+
+</script>
+
+</html>

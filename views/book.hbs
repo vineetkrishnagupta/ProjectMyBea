@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container">
+  {{#if train }}
+  <div class="w3-panel w3-pale-green  w3-leftbar w3-border-green ">
+    <p>{{obj}}</p>
+    <p>You have booked <b>{{data.train_name}}</b> whose train number is<b> {{data.train_number}}</b>. There is<b>{{data.from_city}}</b> to <b>{{data.to_city}}</b> </p>
+    <p>date is <b>{{data.gdate}}</b></p>
+    <p><b>Happy Journey!</b></p>
+  </div>
+       {{/if}}
+{{#if flight }}
+   
+  <div class="w3-panel w3-pale-green  w3-leftbar w3-border-green ">
+    <p>{{obj}}</p>
+    <p> You booked an <b>{{flight_ariline}}</b> Airlines flight from <b>{{from_airport}}</b> to <b>{{to_airport}}</b> whose flight number is <b>{{flight_number}}.</b></p>
+    <p>date is <b>{{gdate}}</b></p>
+    <p><b>Happy Journey!</b></p>
+  </div>
+{{/if}}
+
+
+<a href="/"  class="w3-button w3-white w3-border w3-border-blue">Home</a>
+</div>
+
+</body>
+</html>
