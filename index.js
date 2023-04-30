@@ -17,7 +17,7 @@ hbs.registerPartials(partials)
 
 
 const mongoose = require("mongoose")
-mongoose.connect('mongodb://localhost:27017/mybea',{useNewUrlParser:true, useUnifiedTopology:true})
+mongoose.connect('mongodb+srv://vineetkrishnagupta:nWHZMqFZc44fIwlI@cluster0.uuytckx.mongodb.net/MyBea?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true})
 .then(() => console.log("connect successfull..."))
 .catch((err)=> console.log(err))
 
