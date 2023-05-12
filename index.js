@@ -425,11 +425,37 @@ var data = response.data
 
     
 })
-app.post("/train/ticket", (req, res) => {
+app.post("/trainticket", (req, res) => {
   console.log("ticket")
   var setData = async()=>{
+
+
+    var payment = async()=>{
+      const pay = require("./models/payment")
+      var obj = new pay({
+  
+        card_numder : req.body.cardNumber,
+        expiration_date : req.body.cardMonth + req.body.cardYear,
+        cvv : req.body.cvv,
+        card_holder_name : req.body.cardHolder,
+        payment : req.session.price ,
+        user_id : req.session.userId,
+        user_email : req.session.userEmail,
+        for : "train"
+        
+       
+      })
+      obj.save().then(()=>{
+        console.log("--- Payment Data Save ---")
+         
+        
+         
+      })
+    }
+    payment()
         
     const Book = require("./models/tbook")
+
 
    
     
